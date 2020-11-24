@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/signupStyle.css">
+    <title>Cadastrar</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <a href="home.html"></a>
+            <img src="../public/imagens/logochampions.png" alt="logoChampions">
+        </div>
+    </div>
+    <div class="container-mid">
+            <form id="formfromcadastro" class="container-2" method="POST" onsubmit="return irCadastro()" action="">
+                <h1> Registre-se</h1>
+                <br>
+                <img src="../public/imagens/user.png" alt="">
+                <br><br>
+                <label> Nick Name: </label> <input name="nickName">
+                <label> Celular: </label> <input name="celular">
+                <label> Email: </label> <input name="email">
+                <label> sexo: </label> <input name="sexo">
+                <label> Senha: </label> <input name="senha">
+                <button type="submit"> Registrar</button>
+                <button onclick="telaLogin()">Conectar</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-left">
+            <img src="../public/imagens/logochampions.png" alt="">
+
+        </div>
+        <div class="footer-right">
+            <h2>Contact</h2>
+            <div class="footer-icons">
+                <a href=""><img src="../public/imagens/github.png" alt="github"></a>
+                <a href=""><img src="../public/imagens/linkedin.png" alt=""></a>
+                <a href=""><img src="../public/imagens/twitter.png" alt=""></a>
+            </div>
+            <div class="footer-links">
+                <a href=""> Sobre </a>
+                <a href=""> Blog</a>
+                <a href=""> Newsletter</a>
+            </div>
+            <div class="footer-links">
+                <a href="">Email: wesleyoliveiralimaa1@gmail.com</a>
+                <a href="">telefone: (11)96349-7310</a>
+            </div>
+            <a href="#header" class="footer-button"></a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+ 
+
+    function telaLogin() {
+        window.location = 'login.html';
+    }
+    
+    function irCadastro(){      
+        var formulario = new URLSearchParams(new FormData(formfromcadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+                window.location.reload();
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    alert(resposta)
+                });
+            }
+        });
+
+        return false;
+
+    }
+</script>

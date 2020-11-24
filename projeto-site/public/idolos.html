@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+  <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+  <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
+  <link rel="stylesheet" href="../frontend/style/idolos.css">
+  <title>Maiores Artilheiros</title>
+</head>
+
+<body>
+  <div id="header" class="header">
+    <div class="container">
+      <img src="../frontend/imagens/logochampions.png" alt="logoChampions">
+      <ul>
+        <li><a href="home.html">Inicio</a></li>
+        <li><a>Confrontos</a></li>
+        <li><a>Idolos</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container-center">
+    <div class="container-chart">
+      <h1>Maiores Artilheiros</h1>
+      <canvas id="barChart"></canvas>
+    </div>
+    <div class="carousel">
+      <div><img src="https://i.imgur.com/3aIutJi.png" alt="js" /></div>
+      <div><img src="https://i.imgur.com/rWtGeQ0.png" alt="java" /></div>
+      <div><img src="https://i.imgur.com/8946bSF.png" alt="python"/></div>
+      <div><img src="https://i.imgur.com/9Hc7hjb.png" alt="kotlin" /></div>
+      <div><img src="https://i.imgur.com/uZDEpjX.png" alt="scala" /></div>
+      <div><img src="https://i.imgur.com/eQoyQjy.png" alt="C#" /></div>
+      <div><img src="https://i.imgur.com/ko3iAbu.png" alt="PHP" /></div>
+      <div><img src="https://i.imgur.com/Afkz5od.png" alt="dotnet" /></div>
+    </div>
+    <div class="container-artilheiros">
+      <h1>1° Cristiano Ronaldo</h1>
+      <img src="../frontend/imagensIdolos/cr7.gif" alt="">
+      <p>Ele é sinônimo de gols na Champions League. Cristiano Ronaldo é o maior artilheiro da história da competição,
+        com 120 gols, sendo 105 deles pelo Real Madrid e 15 pelo Manchester United.</p>
+
+      <h1>2° Messi</h1>
+      <img src="../frontend/imagensIdolos/messi.gif" alt="">
+      <p>O craque argentino do Barcelona, na última edição, chegou à marca de 100 gols no torneio.</p>
+
+      <h1>3° Raul</h1>
+      <img src="../frontend/imagensIdolos/1413849490962_wps_48_Real_Madrid_s_captain_Rau.jpg" alt="">
+      <p>Por anos, o ex-atacante espanhol foi o maior artilheiro do torneio. Raúl fez 71 gols pela Champions League,
+        sendo 66 pelo Real Madrid e cinco pelo Schalke 04.</p>
+
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-left">
+      <img src="../frontend/imagens/logochampions.png" alt="">
+
+    </div>
+    <div class="footer-right">
+      <h2>Contact</h2>
+      <div class="footer-icons">
+        <a href=""><img src="../frontend/imagens/github.png" alt="github"></a>
+        <a href=""><img src="../frontend/imagens/linkedin.png" alt=""></a>
+        <a href=""><img src="../frontend/imagens/twitter.png" alt=""></a>
+      </div>
+      <div class="footer-links">
+        <a href=""> Sobre </a>
+        <a href=""> Blog</a>
+        <a href=""> Newsletter</a>
+      </div>
+      <div class="footer-links">
+        <a href="">Email: wesleyoliveiralimaa1@gmail.com</a>
+        <a href="">telefone: (11)96349-7310</a>
+      </div>
+      <a href="#header" class="footer-button"></a>
+    </div>
+  </div>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+  var ctx = document.getElementById("barChart");
+  var barChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ["Benzema", "Raul", "Messi", "Cristiano Ronaldo"],
+      borderColor: "#fffff",
+      datasets: [
+        {
+          label: 'Gols',
+          data: ["44", "71", "100", "120"],
+          borderColor: "#fff",
+          borderWidth: "3",
+          hoverBorderColor: "#000",
+          backgroundColor: [
+            "#b87333",
+            "#cd7f32",
+            "#c0c0c0",
+            "#ffd700"
+          ],
+          hoverBackgroundColor: [
+            "black",
+            "black",
+            "black",
+            "black",
+          ]
+        }]
+    },
+    options: {
+      layout: {
+        padding: {
+          left: 5,
+          right: 10,
+          top: 0,
+          bottom: 0
+        }
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            min: 0,
+            stepSize: 10,
+            fontColor: "white",
+            fontSize: 12
+          },
+          gridLines: {
+            color: "white",
+            lineWidth: 1,
+            zeroLineColor: "white",
+            zeroLineWidth: 1
+          },
+          stacked: true
+        }],
+        xAxes: [{
+          ticks: {
+            fontColor: "white",
+            fontSize: 16
+          },
+          gridLines: {
+            color: "black",
+            lineWidth: 1
+          }
+        }]
+      },
+      responsive: false
+    }
+  });
+
+  $('.carousel').slick({
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+});
+</script>

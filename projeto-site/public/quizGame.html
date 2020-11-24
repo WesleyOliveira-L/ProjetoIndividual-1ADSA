@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/quizGame.css">
+    <title>QuizGame</title>
+</head>
+
+<body>
+    <div id="header" class="header">
+        <div class="container">
+            <img src="./imagens/logochampions.png" alt="logoChampions">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a>Sobre</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="finalJogo">
+        <div class="mid-Container">
+            <div class="container1-mid" id="container1">
+                <h1> Questão 1 </h1>
+                <p> Qual é o Jogador com mais gols na historia da champions league?</p>
+                <select id="selectPrimeiro">
+                    <option value="x">selecione</option>
+                    <option value="messi">Messi</option>
+                    <option value="benzema">Benzema</option>
+                    <option value="cristiano">Cristiano Ronaldo</option>
+                </select>
+                <button onclick="confirmar()">Confirmar</button>
+                <img src="" id="imagem">
+            </div>
+            <div class="container1-mid">
+                <h1> Questão 2 </h1>
+                <p> Qual edição teve o maior numero de visualições em sua final?</p>
+                <select id="selectP">
+                    <option value="">selecione</option>
+                    <option value="opt_champions_2013"> 2012-2013</option>
+                    <option value="opt_champions_2010"> 2010-2011</option>
+                    <option value="opt_champions_2016"> 2016-2017</option>
+                </select>
+                <img src="" alt="">
+                <button onclick="confirmar2()"> Confirmar</button>
+            </div>
+            <div class="container1-mid">
+                <h1>Questão 3</h1>
+                <p>Qual clube vencedor da ultima edição?</p>
+                <select id="selectP">
+                    <option value="">selecione</option>
+                    <option value="opt_real">Real Madrid</option>
+                    <option value="opt_liverpool"> Liverpool </option>
+                    <option value="opt_barcelona"> Barcelona </option>
+                </select>
+                <button onclick="confirmar3()">confirmar</button>
+            </div>
+            <div class="container1-mid">
+                <h1> Questão 4</h1>
+                <p>Qual o clube com mais titulos da competição?</p>
+                <select id="selectP">
+                    <option value="">selecione</option>
+                    <option value="opt_milan">Milan</option>
+                    <option value="opt_barcelona">Barcelona</option>
+                    <option value="opt_real">Real Madrid</option>
+                </select>
+                <button onclick="confirmar4()">confirmar</button>
+            </div>
+            <div class="container1-mid">
+                <h1> Questão 5</h1>
+                <p>Quantas equipes participam da fase de grupos</p>
+                <select id="selectP">
+                    <option value="">selecione</option>
+                    <option value="opt_28">28</option>
+                    <option value="opt_32">32</option>
+                    <option value="opt_34">34</option>
+                </select>
+                <button onclick="confirmar5()"> confirmar</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-left">
+            <img src="./imagens/logochampions.png" alt="">
+
+        </div>
+        <div class="footer-right">
+            <h2>Contact</h2>
+            <div class="footer-icons">
+                <a href=""><img src="./imagens/github.png" alt="github"></a>
+                <a href=""><img src="./imagens/linkedin.png" alt=""></a>
+                <a href=""><img src="./imagens/twitter.png" alt=""></a>
+            </div>
+            <div class="footer-links">
+                <a href=""> Sobre </a>
+                <a href=""> Blog</a>
+                <a href=""> Newsletter</a>
+            </div>
+            <div class="footer-links">
+                <a href="">Email: wesleyoliveiralimaa1@gmail.com</a>
+                <a href="">telefone: (11)96349-7310</a>
+            </div>
+            <a href="#header" class="footer-button"></a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function confirmar() {
+
+        var selectQuestao = selectPrimeiro.value;
+        console.log(selectQuestao)
+
+        if (selectQuestao == "cristiano") {
+            container1.innerHTML = "correto";
+            container1.style.color = "green";
+            container1.style.fontSize = '36px';
+        }
+
+        else {
+            finalJogo.innerHTML = "Você Perdeu tente novamente em :";
+            finalJogo.style.backgroundColor = "black";
+            finalJogo.style.height = "300px"
+            finalJogo.style.width = "100%";
+            finalJogo.style.fontSize= "50px"
+            finalJogo.style.textAlign = "center";
+            finalJogo.style.color = "red";
+        }
+    }
+</script>

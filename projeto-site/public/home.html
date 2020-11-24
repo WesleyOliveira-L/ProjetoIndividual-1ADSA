@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="./style/style.css" media="screen" />
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="header" class="header">
+        <div class="container">
+            <img src="./imagens/logochampions.png" alt="logoChampions">
+            <ul>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="login.html">QuizGame</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="corpo">
+        <div class="container-2">
+            <video class="videoChampions" id="myVideo" src="./imagens/champions.mp4"
+                controls="controls" autoplay="autoplay" loop muted></video>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container-3">
+            <button onclick="historia()">HISTORIA</button>
+        </div>
+
+        <div class="container-4">
+            <button onclick="confrontos()">CONFRONTOS</button>
+        </div>
+    </div>
+
+    <div class="menu2">
+        <div class="container-5">
+            <button onclick="campeoes()">CAMPEÕES</button>
+        </div>
+
+        <div class="container-6">
+            <button onclick="idolos()">IDOLOS</button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-left">
+            <img src="./imagens/logochampions.png" alt="">
+
+        </div>
+        <div class="footer-right">
+            <h2>Contact</h2>
+            <div class="footer-icons">
+                <a href=""><img src="./imagens/github.png" alt="github"></a>
+                <a href=""><img src="./imagens/linkedin.png" alt=""></a>
+                <a href=""><img src="./imagens/twitter.png" alt=""></a>
+            </div>
+            <div class="footer-links">
+                <a href=""> Sobre </a>
+                <a href=""> Blog</a>
+                <a href=""> Newsletter</a>
+            </div>
+            <div class="footer-links">
+                <a href="">Email: wesleyoliveiralimaa1@gmail.com</a>
+                <a href="">telefone: (11)96349-7310</a>
+            </div>
+            <a href="#header" class="footer-button"></a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var vid = document.getElementById("myVideo");
+
+    function documentReady() {
+        vid.play();
+    }
+
+    $(document).ready(documentReady);
+
+    function historia(){
+        window.location = 'historia.html';
+    }
+
+    function confrontos(){
+        window.location = 'confrontos.html';
+    }
+
+    function idolos(){
+        window.location = 'idolos.html';
+    }
+
+    function campeoes(){
+        window.location = 'campeoes.html';
+    }
+</script>

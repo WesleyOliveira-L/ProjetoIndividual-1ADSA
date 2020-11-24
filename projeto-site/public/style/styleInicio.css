@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    
+}
+body{
+    background-color: black;
+    background-image: url(../imagens/inicio.jpg);
+    background-repeat: no-repeat;
+    background-size: 130%;
+    background-position-x: center;
+}
+@keyframes go-back {
+    100% {
+        transform: translateX(0);
+    }
+    0% {
+        transform: translateY(-200px);
+    }
+}
+#imagem{
+    width: 150px;
+    height: 150px;   
+    animation: go-back 2s; 
+}
+
+.logo{
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
