@@ -10,16 +10,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
   <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
   <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css">
-  <link rel="stylesheet" href="../frontend/style/idolos.css">
+  <link rel="stylesheet" href="./style/idolos.css">
   <title>Maiores Artilheiros</title>
 </head>
 
 <body>
   <div id="header" class="header">
     <div class="container">
-      <img src="../frontend/imagens/logochampions.png" alt="logoChampions">
+      <img src="./imagens/logochampions.png" alt="logoChampions">
       <ul>
         <li><a href="home.html">Inicio</a></li>
         <li><a>Confrontos</a></li>
@@ -32,28 +30,18 @@
       <h1>Maiores Artilheiros</h1>
       <canvas id="barChart"></canvas>
     </div>
-    <div class="carousel">
-      <div><img src="https://i.imgur.com/3aIutJi.png" alt="js" /></div>
-      <div><img src="https://i.imgur.com/rWtGeQ0.png" alt="java" /></div>
-      <div><img src="https://i.imgur.com/8946bSF.png" alt="python"/></div>
-      <div><img src="https://i.imgur.com/9Hc7hjb.png" alt="kotlin" /></div>
-      <div><img src="https://i.imgur.com/uZDEpjX.png" alt="scala" /></div>
-      <div><img src="https://i.imgur.com/eQoyQjy.png" alt="C#" /></div>
-      <div><img src="https://i.imgur.com/ko3iAbu.png" alt="PHP" /></div>
-      <div><img src="https://i.imgur.com/Afkz5od.png" alt="dotnet" /></div>
-    </div>
     <div class="container-artilheiros">
       <h1>1° Cristiano Ronaldo</h1>
-      <img src="../frontend/imagensIdolos/cr7.gif" alt="">
+      <img src="./imagensIdolos/cr7.gif" alt="">
       <p>Ele é sinônimo de gols na Champions League. Cristiano Ronaldo é o maior artilheiro da história da competição,
         com 120 gols, sendo 105 deles pelo Real Madrid e 15 pelo Manchester United.</p>
 
       <h1>2° Messi</h1>
-      <img src="../frontend/imagensIdolos/messi.gif" alt="">
+      <img src="./imagensIdolos/messi.gif" alt="">
       <p>O craque argentino do Barcelona, na última edição, chegou à marca de 100 gols no torneio.</p>
 
       <h1>3° Raul</h1>
-      <img src="../frontend/imagensIdolos/1413849490962_wps_48_Real_Madrid_s_captain_Rau.jpg" alt="">
+      <img src="./imagensIdolos/1413849490962_wps_48_Real_Madrid_s_captain_Rau.jpg" alt="">
       <p>Por anos, o ex-atacante espanhol foi o maior artilheiro do torneio. Raúl fez 71 gols pela Champions League,
         sendo 66 pelo Real Madrid e cinco pelo Schalke 04.</p>
 
@@ -61,15 +49,15 @@
   </div>
   <div class="footer">
     <div class="footer-left">
-      <img src="../frontend/imagens/logochampions.png" alt="">
+      <img src="./imagens/logochampions.png" alt="">
 
     </div>
     <div class="footer-right">
       <h2>Contact</h2>
       <div class="footer-icons">
-        <a href=""><img src="../frontend/imagens/github.png" alt="github"></a>
-        <a href=""><img src="../frontend/imagens/linkedin.png" alt=""></a>
-        <a href=""><img src="../frontend/imagens/twitter.png" alt=""></a>
+        <a href=""><img src="./imagens/github.png" alt="github"></a>
+        <a href=""><img src="./imagens/linkedin.png" alt=""></a>
+        <a href=""><img src="./imagens/twitter.png" alt=""></a>
       </div>
       <div class="footer-links">
         <a href=""> Sobre </a>
@@ -97,23 +85,21 @@
   var barChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ["Benzema", "Raul", "Messi", "Cristiano Ronaldo"],
+      labels: ["Raul", "Messi", "Cristiano Ronaldo"],
       borderColor: "#fffff",
       datasets: [
         {
           label: 'Gols',
-          data: ["44", "71", "100", "120"],
+          data: ["71", "100", "120"],
           borderColor: "#fff",
           borderWidth: "3",
           hoverBorderColor: "#000",
           backgroundColor: [
-            "#b87333",
             "#cd7f32",
             "#c0c0c0",
             "#ffd700"
           ],
           hoverBackgroundColor: [
-            "black",
             "black",
             "black",
             "black",
