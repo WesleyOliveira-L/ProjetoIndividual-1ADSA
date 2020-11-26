@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/campeoes.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="header" class="header">
+        <div class="container">
+            <img src="./imagens/logochampions.png" alt="logoChampions">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="./confrontos.html">Confrontos</a></li>
+                <li><a href="./idolos.html">Idolos</a></li>
+                <li><a href="./campeoes.html">campeoes</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+
+            <div class="text">
+                <h1>1° REAL MADRID</h1>
+                <img src="./imagensCampeoes/real-madrid-champions-league-2018_a0p1r66hz5we16cl9owl2otko.png" alt="">
+                <p>O clube espanhol venceu as cinco primeiras edições do torneio. Além disso, nas últimas seis
+                    temporadas, levou mais quatro títulos. No total, são 13 taças (1956, 1957, 1958, 1959, 1960,
+                    1966,
+                    1998, 2000, 2002, 2014, 2016, 2017 e 2018), que colocam os merengues na liderança disparada da
+                    lista
+                    dos maiores vencedores da Champions de todos os tempos.</p>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="text">
+                <h1>2° AC MILAN</h1>
+                <img
+                    src="./imagensCampeoes/A.C._Milan_lifting_the_European_Cup_after_winning_the_2002–03_UEFA_Champions_League_-_20030528.jpg">
+                <p>O gigante adormecido da Itália não disputa a Champions desde 2014, mas tem uma rica história no
+                    torneio. São sete títulos (1963, 1969, 1989, 1990, 1994, 2003 e 2007), sendo que o último foi
+                    liderado pelo brasileiro Kaká – na época, eleito o melhor jogador do mundo.</p>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="text">
+                <h1>3° LIVERPOOL</h1>
+                <img src="./imagensCampeoes/wp4367800.jpg">
+                <p>Apesar de ter ficado 30 anos sem vencer o Campeonato Inglês, os Reds não deixaram de comemorar o
+                    título europeu durante este período. Duas vezes, por sinal. Afinal, eles são donos de seis taças:
+                    1977, 1978, 1981, 1984, 2005 e 2019.</p>
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="text">
+                <h1>4° BAYERN DE MUNIQUE</h1>
+                <img src="./imagensCampeoes/bayern_munich.jpg">
+                <p>Eles sempre chegam entre os favoritos nos últimos anos, e não à toa aparecem em posição privilegiada
+                    na lista dos maiores vencedores da Champions. São cinco títulos (1974, 1975, 1976, 2001 e 2013),
+                    além de cinco vice-campeonatos.</p>
+            </div>
+        </div>
+        <div class="mySlides fade">
+            <div class="text">
+                <h1>5° Barcelona</h1>
+                <img src="./imagensCampeoes/download-fc-barcelona-2015-uefa-champions-league-winners-wallpaper-by.jpg">
+                <p>O clube catalão conquistou boa parte de seus títulos europeus há pouco tempo – três deles foram sob a batuta de
+                    Lionel Messi. São cinco taças, nas temporadas de 1992, 2006, 2009, 2011 e 2015. Será que vem mais uma?
+                    </p>
+            </div>
+        </div>
+        
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <div class="footer">
+        <div class="footer-left">
+            <img src="./imagens/logochampions.png" alt="">
+
+        </div>
+        <div class="footer-right">
+            <h2>Contact</h2>
+            <div class="footer-icons">
+                <a href=""><img src="./imagens/github.png" alt="github"></a>
+                <a href=""><img src="./imagens/linkedin.png" alt=""></a>
+                <a href=""><img src="./imagens/twitter.png" alt=""></a>
+            </div>
+            <div class="footer-links">
+                <a href=""> Sobre </a>
+                <a href=""> Blog</a>
+                <a href=""> Newsletter</a>
+            </div>
+            <div class="footer-links">
+                <a href="">Email: wesleyoliveiralimaa1@gmail.com</a>
+                <a href="">telefone: (11)96349-7310</a>
+            </div>
+            <a href="#header" class="footer-button"></a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+</script>

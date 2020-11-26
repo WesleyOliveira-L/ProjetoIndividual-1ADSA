@@ -9,19 +9,19 @@ let sessoes = [];
 router.post('/autenticar', function (req, res, next) {
 	console.log('Recuperando usuário por login e senha');
 
-	var login = req.body.nickName;
+	var nickName = req.body.nickName;
 	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
 
-	let instrucaoSql = `select * from usuario where login='${login}' and senha='${senha}'`;
+	let instrucaoSql = `select * from usuario where login='${nickName}' and senha='${senha}'`;
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
-		model: Usuario
+		model: usuario
 	}).then(resultado => {
 		console.log(`Encontrados: ${resultado.length}`);
 
 		if (resultado.length == 1) {
-			sessoes.push(resultado[0].dataValues.login);
+			sessoes.push(resultado[0].dataValues.nickName);
 			console.log('sessoes: ', sessoes);
 			res.json(resultado[0]);
 		} else if (resultado.length == 0) {
@@ -59,19 +59,19 @@ router.post('/cadastrar', function (req, res, next) {
 
 /* Verificação de usuário */
 router.get('/sessao/:nickName', function (req, res, next) {
-    let login = req.params.nickName;
-    console.log(`Verificando se o usuário ${login} tem sessão`);
+	let nickName = req.params.nickName;
+    console.log(`Verificando se o usuário ${nickName} tem sessão`);
 
     let tem_sessao = false;
     for (let u = 0; u < sessoes.length; u++) {
-        if (sessoes[u] == login) {
+        if (sessoes[u] == nickName) {
             tem_sessao = true;
             break;
         }
     }
 
     if (tem_sessao) {
-        let mensagem =` Usuário ${login} possui sessão ativa!`;
+        let mensagem =` Usuário ${nickName} possui sessão ativa!`;
         console.log(mensagem);
         res.send(mensagem);
     } else {
@@ -83,16 +83,16 @@ router.get('/sessao/:nickName', function (req, res, next) {
 
 /* Logoff de usuário */
 router.get('/sair/:login', function (req, res, next) {
-	let login = req.params.nickName;
-	console.log(`Finalizando a sessão do usuário ${login}`);
+	let nickName = req.params.nickName;
+	console.log(`Finalizando a sessão do usuário ${nickName}`);
 	let nova_sessoes = []
 	for (let u = 0; u < sessoes.length; u++) {
-		if (sessoes[u] != login) {
+		if (sessoes[u] != nickName) {
 			nova_sessoes.push(sessoes[u]);
 		}
 	}
 	sessoes = nova_sessoes;
-	res.send(`Sessão do usuário ${login} finalizada com sucesso!`);
+	res.send(`Sessão do usuário ${nickName} finalizada com sucesso!`);
 });
 
 

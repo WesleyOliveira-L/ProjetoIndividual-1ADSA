@@ -19,8 +19,8 @@
             <form  class="container-2" id="formLogin"  onsubmit="return entrar()" action="POST">
             <img src="./imagens/user.png" alt="">
             <br><br>
-            <label> Nick Name: </label> <input id="in_nick" placeholder="Digite seu NickName" required minlength="4">
-            <label> Senha: </label> <input id="in_senha" type="password" placeholder="***************" required minlength="4">
+            <label> Nick Name: </label> <input name="nickName" placeholder="Digite seu NickName" required minlength="4">
+            <label> Senha: </label> <input name="senha" type="password" placeholder="***************" required minlength="4">
             <button type="submit"> Conectar </button>
             <button onclick="registro()"> Registrar</button>
         </form>
@@ -66,8 +66,8 @@ function entrar() {
 
             resposta.json().then(json => {
 
-                sessionStorage.login_usuario_meuapp = json.login;
-                sessionStorage.nome_usuario_meuapp = json.nome;
+                sessionStorage.nickName = json.nickName;
+                sessionStorage.senha = json.senha;
 
                 window.location.href = 'quizGame.html';
             });
