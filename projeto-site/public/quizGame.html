@@ -10,6 +10,7 @@
 
 <body>
     <div id="header" class="header">
+
         <div class="container">
             <img src="./imagens/logochampions.png" alt="logoChampions">
             <ul>
@@ -18,67 +19,78 @@
             </ul>
         </div>
     </div>
-    <div id="finalJogo">
-        <div class="mid-Container">
-            <div class="container1-mid" id="container1">
-                <h1> Questão 1 </h1>
-                <p> Qual é o Jogador com mais gols na historia da champions league?</p>
-                <select id="selectPrimeiro">
-                    <option value="x">selecione</option>
-                    <option value="messi">Messi</option>
-                    <option value="benzema">Benzema</option>
-                    <option value="cristiano">Cristiano Ronaldo</option>
-                </select>
-                <button onclick="confirmar()">Confirmar</button>
-                <img src="" id="imagem">
-            </div>
-            <div class="container1-mid">
-                <h1> Questão 2 </h1>
-                <p> Qual edição teve o maior numero de visualições em sua final?</p>
-                <select id="selectP">
-                    <option value="">selecione</option>
-                    <option value="opt_champions_2013"> 2012-2013</option>
-                    <option value="opt_champions_2010"> 2010-2011</option>
-                    <option value="opt_champions_2016"> 2016-2017</option>
-                </select>
-                <img src="" alt="">
-                <button onclick="confirmar2()"> Confirmar</button>
-            </div>
-            <div class="container1-mid">
-                <h1>Questão 3</h1>
-                <p>Qual clube vencedor da ultima edição?</p>
-                <select id="selectP">
-                    <option value="">selecione</option>
-                    <option value="opt_real">Real Madrid</option>
-                    <option value="opt_liverpool"> Liverpool </option>
-                    <option value="opt_barcelona"> Barcelona </option>
-                </select>
-                <button onclick="confirmar3()">confirmar</button>
-            </div>
-            <div class="container1-mid">
-                <h1> Questão 4</h1>
-                <p>Qual o clube com mais titulos da competição?</p>
-                <select id="selectP">
-                    <option value="">selecione</option>
-                    <option value="opt_milan">Milan</option>
-                    <option value="opt_barcelona">Barcelona</option>
-                    <option value="opt_real">Real Madrid</option>
-                </select>
-                <button onclick="confirmar4()">confirmar</button>
-            </div>
-            <div class="container1-mid">
-                <h1> Questão 5</h1>
-                <p>Quantas equipes participam da fase de grupos</p>
-                <select id="selectP">
-                    <option value="">selecione</option>
-                    <option value="opt_28">28</option>
-                    <option value="opt_32">32</option>
-                    <option value="opt_34">34</option>
-                </select>
-                <button onclick="confirmar5()"> confirmar</button>
-            </div>
+    <!--     div para encerramento do quiz      -->
+
+    <div class="mid-Container" id="containerGeral">
+        <!-- Div que contém todas questões do jogo-->
+
+        <div class="container1-mid" id="containerQuestao1">
+            <h1> Questão 1 </h1>
+            <p> Qual é o Jogador com mais gols na historia da champions league?</p>
+            <select id="selectPrimeiraQuestao">
+                <option value="slelecionar">selecione</option>
+                <option value="messi">Messi</option>
+                <option value="benzema">Benzema</option>
+                <option value="cristiano">Cristiano Ronaldo</option>
+            </select>
+            <button onclick="confirmarResposta()">Confirmar</button>
+            <img src="" id="imagem">
+        </div>
+
+        <div class="container1-mid" id="containerQuestao2">
+            <h1> Questão 2 </h1>
+            <p> Qual edição teve o maior numero de visualições em sua final?</p>
+            <select id="selectSegundaQuestao">
+                <option value="">selecione</option>
+                <option value="opt_champions_2013"> 2012-2013</option>
+                <option value="opt_champions_2010"> 2010-2011</option>
+                <option value="opt_champions_2016"> 2016-2017</option>
+            </select>
+            <img src="" alt="">
+            <button onclick="confirmarResposta2()"> Confirmar</button>
+        </div>
+
+        <div class="container1-mid" id="containerQuestao3">
+            <h1>Questão 3</h1>
+            <p>Qual clube vencedor da ultima edição?</p>
+            <select id="selectTerceiraQuestao">
+                <option value="">selecione</option>
+                <option value="opt_real">Real Madrid</option>
+                <option value="opt_liverpool"> Liverpool </option>
+                <option value="opt_barcelona"> Barcelona </option>
+            </select>
+            <button onclick="confirmarResposta3()">confirmar</button>
+        </div>
+
+        <div class="container1-mid" id="containerQuestao4">
+            <h1> Questão 4</h1>
+            <p>Qual o clube com mais titulos da competição?</p>
+            <select id="selectQuartaQuestao">
+                <option value="">selecione</option>
+                <option value="opt_milan">Milan</option>
+                <option value="opt_barcelona">Barcelona</option>
+                <option value="opt_real">Real Madrid</option>
+            </select>
+            <button onclick="confirmarResposta4()">confirmar</button>
+        </div>
+        <div class="container1-mid" id="containerQuestao5">
+            <h1> Questão 5</h1>
+            <p>Quantas equipes participam da fase de grupos</p>
+            <select id="selectQuintaQuestao">
+                <option value="">selecione</option>
+                <option value="opt_28">28</option>
+                <option value="opt_32">32</option>
+                <option value="opt_34">34</option>
+            </select>
+            <button onclick="confirmarResposta5()"> confirmar</button>
         </div>
     </div>
+    <div class="container-finalizarJogo" id="containerFimjogo">
+        <div id="finalizarJogo">
+            <p id="fim"></p>
+        </div>
+    </div>
+
     <div class="footer">
         <div class="footer-left">
             <img src="./imagens/logochampions.png" alt="">
@@ -91,11 +103,13 @@
                 <a href=""><img src="./imagens/linkedin.png" alt=""></a>
                 <a href=""><img src="./imagens/twitter.png" alt=""></a>
             </div>
+
             <div class="footer-links">
                 <a href=""> Sobre </a>
                 <a href=""> Blog</a>
                 <a href=""> Newsletter</a>
             </div>
+
             <div class="footer-links">
                 <a href="">Email: wesleyoliveiralimaa1@gmail.com</a>
                 <a href="">telefone: (11)96349-7310</a>
@@ -108,25 +122,95 @@
 </html>
 
 <script>
-    function confirmar() {
+    function confirmarResposta() {
 
-        var selectQuestao = selectPrimeiro.value;
-        console.log(selectQuestao)
+        var questao1 = selectPrimeiraQuestao.value;
+        console.log(questao1)
 
-        if (selectQuestao == "cristiano") {
-            container1.innerHTML = "correto";
-            container1.style.color = "green";
-            container1.style.fontSize = '36px';
+        if (questao1 == "cristiano") {
+            containerQuestao1.innerHTML = "correto";
+            containerQuestao1.style.color = "green";
+            containerQuestao1.style.fontSize = '36px';
         }
 
         else {
-            finalJogo.innerHTML = "Você Perdeu tente novamente em :";
-            finalJogo.style.backgroundColor = "black";
-            finalJogo.style.height = "300px"
-            finalJogo.style.width = "100%";
-            finalJogo.style.fontSize= "50px"
-            finalJogo.style.textAlign = "center";
-            finalJogo.style.color = "red";
+            containerGeral.style.display = 'none'
+            containerFimjogo.style.display = 'block';
+            fim.innerHTML = 'IXX tente novamente em ';
+
         }
     }
+
+    function confirmarResposta2() {
+        var questao2 = selectSegundaQuestao.value;
+        console.log(questao2)
+
+        if (questao2 == "opt_champions_2013") {
+            containerQuestao2.innerHTML = "correto";
+            containerQuestao2.style.color = "green";
+            containerQuestao2.style.fontSize = '36px';
+        }
+
+        else {
+            containerGeral.style.display = 'none'
+            containerFimjogo.style.display = 'block';
+            fim.innerHTML = 'IXX tente novamente em ';
+
+        }
+    }
+
+    function confirmarResposta3() {
+        var questao3 = selectTerceiraQuestao.value;
+        console.log(questao3)
+
+        if (questao3 == "opt_liverpool") {
+            containerQuestao3.innerHTML = "correto";
+            containerQuestao3.style.color = "green";
+            containerQuestao3.style.fontSize = '36px';
+        }
+
+        else {
+            containerGeral.style.display = 'none'
+            containerFimjogo.style.display = 'block';
+            fim.innerHTML = 'IXX tente novamente em ';
+
+        }
+    }
+
+    function confirmarResposta4() {
+        var questao4 = selectQuartaQuestao.value;
+        console.log(questao4)
+
+        if (questao4 == "opt_real") {
+            containerQuestao4.innerHTML = "correto";
+            containerQuestao4.style.color = "green";
+            containerQuestao4.style.fontSize = '36px';
+        }
+
+        else {
+            containerGeral.style.display = 'none'
+            containerFimjogo.style.display = 'block';
+            fim.innerHTML = 'IXX tente novamente em ';
+
+        }
+    }
+
+    function confirmarResposta5() {
+        var questao5 = selectQuintaQuestao.value;
+        console.log(questao5)
+
+        if (questao5 == "opt_32") {
+            containerQuestao5.innerHTML = "correto";
+            containerQuestao5.style.color = "green";
+            containerQuestao5.style.fontSize = '36px';
+        }
+
+        else {
+            containerGeral.style.display = 'none'
+            containerFimjogo.style.display = 'block';
+            fim.innerHTML = 'IXX tente novamente em ';
+
+        }
+    }
+
 </script>
