@@ -56,17 +56,35 @@ body {
 
 .container-inicio{
     width: 100%;
-    height: 500px;
+    height: 750px;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
+}
+
+.container-inicio p{
+    font-size: 45px;
+    color: white;
+    font-weight: 900;
+    padding: 20px;
+    -webkit-text-stroke: 2px black;
+}
+
+.container-inicio button{
+    width: 200px;
+    height: 80px;
+    border: 3px solid white;
+    border-radius:20px;
+    color: white;
+    background-color: black;
 }
 
 .container-finalizarJogo{
     margin-top: 15%;
     display: flex;
-    align-items: center;
-    height: 450px;
+    width: 100%;
+    height: 500px;
     display: none;
 }
 
@@ -83,7 +101,6 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    left: 30%;
     animation: movPerdeu 8s infinite alternate;
 }
 
@@ -103,6 +120,7 @@ body {
 }
 
 .mid-Container{
+    height: 750px;
     margin: 20px;
     display: flex;
     justify-content: center;
@@ -120,6 +138,7 @@ body {
     display: flex;
     text-align: center;
     flex-direction: column;
+    padding: 10px;
     border: 1px solid white;
     background-color: black;
     height: 400px;
@@ -128,12 +147,13 @@ body {
 }
 
 .container1-mid h1{
-    font-weight: 1000;
+    font-weight: 900;
     -webkit-text-stroke: 1px blue;
 }
 
 .container1-mid p{
-    font-size: 28px;
+    font-size: 18px;
+    font-weight: 900;
 }
 
 .container1-mid select{
@@ -165,22 +185,16 @@ body {
     font-size: 20px;
 }
 
-.container-ganhador{
-    width: 100%;
-    height: 600px;
-    display: flex;
-    align-items: center;
-}
 
-#vencedor{
+#div_vencedor{
+    margin: 50px;
     background-color: black;
     border: 3px solid white;
-    border-radius: 400px;font-size: 50px;
-    font-weight: 900;
-    width: 50%;
+    border-radius: 400px;
+    width: 57%;
     height: 400px;
     position: relative;
-    animation: movPerdeu 4s infinite alternate;
+    animation: movPerdeu 6s infinite alternate;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -188,19 +202,21 @@ body {
 
 }
 
-#vencedor p{
+#div_vencedor p{
+    font-size: 24px;
+    font-weight: 900;
     color: white;
-    -webkit-text-stroke: 3px green;
+    -webkit-text-stroke: 1px green;
 }
 
-#vencedor img{
+#div_vencedor img{
     border: 1px solid;
     border-radius: 10px;
-    width: 250px;
+    width: 300px;
     padding-top: 15px;
 }
 
-#vencedor button{
+#div_vencedor button{
     background-color: black;
     width: 100px;
     height: 60px;
@@ -208,15 +224,16 @@ body {
     color: white;
     border-radius: 10px;
     border: 3px solid white;
+    animation: movGanhou 8s infinite alternate;
 }
 
-@keyframes movPerdeu {
+@keyframes movGanhou {
     from {
         color: black;
         left: 0%
     }
     to {
-        left: 49%
+        left: 30%
     }
 }
 

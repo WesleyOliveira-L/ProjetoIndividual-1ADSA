@@ -20,17 +20,22 @@
       <img src="./imagens/logochampions.png" alt="logoChampions">
       <ul>
         <li><a href="home.html">Inicio</a></li>
-        <li><a href="./confrontos.html">Confrontos</a></li>
-        <li><a href="./idolos.html">Idolos</a></li>
+        <li><a href="./confrontos.html">Classificação</a></li>
         <li><a href="./campeoes.html">campeoes</a></li>
       </ul>
     </div>
   </div>
+
+  <!-- Bloco pai dos blocos de graficos e jogadores-->
   <div class="container-center">
+
+    <!--  Bloco grafico  -->
     <div class="container-chart">
       <h1>Maiores Artilheiros</h1>
       <canvas id="barChart"></canvas>
     </div>
+    
+    <!-- bloco dos jogadores -->
     <div class="container-artilheiros">
       <h1>1° Cristiano Ronaldo</h1>
       <img src="./imagensIdolos/cr7.gif" alt="">
@@ -97,9 +102,9 @@
             "#ffd700"
           ],
           hoverBackgroundColor: [
-            "black",
-            "black",
-            "black",
+            "white",
+            "white",
+            "white",
           ]
         }]
     },
@@ -116,13 +121,13 @@
         yAxes: [{
           ticks: {
             min: 0,
-            stepSize: 10,
+            stepSize: 20,
             fontColor: "white",
-            fontSize: 12
+            fontSize: 14
           },
           gridLines: {
             color: "white",
-            lineWidth: 1,
+            lineWidth: 2,
             zeroLineColor: "white",
             zeroLineWidth: 1
           },
@@ -131,12 +136,8 @@
         xAxes: [{
           ticks: {
             fontColor: "white",
-            fontSize: 16
+            fontSize: 18,
           },
-          gridLines: {
-            color: "black",
-            lineWidth: 1
-          }
         }]
       },
       responsive: false

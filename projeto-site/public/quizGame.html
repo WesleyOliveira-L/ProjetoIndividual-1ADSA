@@ -15,13 +15,13 @@
             <img src="./imagens/logochampions.png" alt="logoChampions">
             <ul>
                 <li><a href="home.html">Inicio</a></li>
-                <li><a>Sobre</a></li>
             </ul>
         </div>
     </div>
 
     <!-- bloco de inicio do jogo -->
     <div class="container-inicio" id="divInicio">
+        <p>Acerte as perguntas e concorra a premios </p>
         <button onclick="inicioJogo()">COMEÇAR</button>
     </div>
 
@@ -100,12 +100,10 @@
     </div>
 
     <!-- bloco do vencedor-->
-    <div class="container-ganhador" style="display: none;">
-        <div id="div_vencedor">
-            <img src="./imagensQuiz/tenor.gif" alt="">
-            <p>Você é um campeão</p>
-            <button onclick="vencedor()">Ir para o inico</button>
-        </div>
+    <div id="div_vencedor" style="display: none;">
+        <img src="./imagensQuiz/tenor.gif" alt="">
+        <p>Pode comemorar jogador!!!,você acertou todas as questões</p>
+        <button onclick="vencedor()">Ir para o inicio</button>
     </div>
 
     <div class="footer">
@@ -139,17 +137,14 @@
 </html>
 
 <script>
-    var acertos = 0;
     function confirmarResposta() {
 
         var questao1 = selectPrimeiraQuestao.value;
         console.log(questao1)
 
         if (questao1 == "cristiano") {
-            containerQuestao1.innerHTML = "correto";
-            containerQuestao1.style.color = "green";
-            containerQuestao1.style.fontSize = '36px';
-            containerQuestao2.style.display = 'block';
+            containerQuestao1.style.display = "none";
+            containerQuestao2.style.display = 'flex';
         }
 
         else {
@@ -165,15 +160,13 @@
         console.log(questao2)
 
         if (questao2 == "opt_champions_2013") {
-            containerQuestao2.innerHTML = "correto";
-            containerQuestao2.style.color = "green";
-            containerQuestao2.style.fontSize = '36px';
-            containerQuestao3.style.display = 'block';
+            containerQuestao2.style.display = "none";
+            containerQuestao3.style.display = "flex";
         }
 
         else {
             containerGeral.style.display = 'none'
-            containerFimjogo.style.display = 'block';
+            containerFimjogo.style.display = 'flex';
             fim.innerHTML = 'IXX tente novamente em ';
 
         }
@@ -184,15 +177,13 @@
         console.log(questao3)
 
         if (questao3 == "opt_liverpool") {
-            containerQuestao3.innerHTML = "correto";
-            containerQuestao3.style.color = "green";
-            containerQuestao3.style.fontSize = '36px';
-            containerQuestao4.style.display = 'block';
+            containerQuestao3.style.display = 'none';
+            containerQuestao4.style.display = 'flex';
         }
 
         else {
             containerGeral.style.display = 'none'
-            containerFimjogo.style.display = 'block';
+            containerFimjogo.style.display = 'flex';
             fim.innerHTML = 'IXX tente novamente em ';
 
         }
@@ -203,15 +194,13 @@
         console.log(questao4)
 
         if (questao4 == "opt_real") {
-            containerQuestao4.innerHTML = "correto";
-            containerQuestao4.style.color = "green";
-            containerQuestao4.style.fontSize = '36px';
-            containerQuestao5.style.display = 'block';
+            containerQuestao4.style.display = 'none';
+            containerQuestao5.style.display = 'flex';
         }
 
         else {
             containerGeral.style.display = 'none'
-            containerFimjogo.style.display = 'block';
+            containerFimjogo.style.display = 'flex';
             fim.innerHTML = 'IXX tente novamente em ';
 
         }
@@ -222,15 +211,13 @@
         console.log(questao5)
 
         if (questao5 == "opt_32") {
-            containerQuestao5.innerHTML = "correto";
-            containerQuestao5.style.color = "green";
-            containerQuestao5.style.fontSize = '36px';
-            div_vencedor.style.display = 'block';
+            containerGeral.style.display = "none";
+            div_vencedor.style.display = "flex";
         }
 
         else {
-            containerGeral.style.display = 'none'
-            containerFimjogo.style.display = 'block';
+            containerGeral.style.display = 'none';
+            containerFimjogo.style.display = 'flex';
             fim.innerHTML = 'IXX tente novamente em ';
 
         }
@@ -238,6 +225,11 @@
 
     function vencedor() {
         window.location = 'home.html';
+    }
+
+    function inicioJogo() {
+        divInicio.style.display = "none"
+        containerGeral.style.display = "flex";
     }
 
 </script>

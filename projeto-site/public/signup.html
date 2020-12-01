@@ -22,11 +22,11 @@
                 <br>
                 <img src="./imagens/user.png" alt="">
                 <br><br>
-                <label> Nick Name: </label> <input name="nickName">
-                <label> Celular: </label> <input name="celular">
-                <label> Email: </label> <input name="email">
-                <label> sexo: </label> <input name="sexo">
-                <label> Senha: </label> <input name="senha">
+                <label> Nick Name: </label> <input name="nickName" placeholder="digite seu nick name" required minlength="4">
+                <label> Celular: </label> <input name="celular" placeholder="digite seu numero sem caracteres especiais" required maxlength="11">
+                <label> Email: </label> <input name="email" placeholder="digite seu Email">
+                <label> sexo: </label> <input name="sexo" placeholder="digite M(masculino) ou F(feminino) ou I(indefinido)" required maxlength="1">
+                <label> Senha: </label> <input name="senha" placeholder="digite sua senha" required minlength="4">
                 <button type="submit"> Registrar</button>
                 <button onclick="telaLogin()">Conectar</button>
             </form>
@@ -76,7 +76,7 @@
         }).then(function (response) {
             
             if (response.ok) {
-                window.location.reload();
+                window.location='login.html';
             } else {
 
                 console.log('Erro de cadastro!');
