@@ -19,11 +19,17 @@
             </ul>
         </div>
     </div>
-    <!--     div para encerramento do quiz      -->
 
-    <div class="mid-Container" id="containerGeral">
-        <!-- Div que contém todas questões do jogo-->
+    <!-- bloco de inicio do jogo -->
+    <div class="container-inicio" id="divInicio">
+        <button onclick="inicioJogo()">COMEÇAR</button>
+    </div>
 
+    <!--    Bloco que contém todas questões do jogo      -->
+    <div class="mid-Container" id="containerGeral" style="display: none;">
+
+
+        <!-- bloco que informa cada questao -->
         <div class="container1-mid" id="containerQuestao1">
             <h1> Questão 1 </h1>
             <p> Qual é o Jogador com mais gols na historia da champions league?</p>
@@ -37,7 +43,7 @@
             <img src="" id="imagem">
         </div>
 
-        <div class="container1-mid" id="containerQuestao2">
+        <div class="container1-mid" id="containerQuestao2" style="display: none;">
             <h1> Questão 2 </h1>
             <p> Qual edição teve o maior numero de visualições em sua final?</p>
             <select id="selectSegundaQuestao">
@@ -50,7 +56,7 @@
             <button onclick="confirmarResposta2()"> Confirmar</button>
         </div>
 
-        <div class="container1-mid" id="containerQuestao3">
+        <div class="container1-mid" id="containerQuestao3" style="display: none;">
             <h1>Questão 3</h1>
             <p>Qual clube vencedor da ultima edição?</p>
             <select id="selectTerceiraQuestao">
@@ -62,7 +68,7 @@
             <button onclick="confirmarResposta3()">confirmar</button>
         </div>
 
-        <div class="container1-mid" id="containerQuestao4">
+        <div class="container1-mid" id="containerQuestao4" style="display: none;">
             <h1> Questão 4</h1>
             <p>Qual o clube com mais titulos da competição?</p>
             <select id="selectQuartaQuestao">
@@ -73,7 +79,7 @@
             </select>
             <button onclick="confirmarResposta4()">confirmar</button>
         </div>
-        <div class="container1-mid" id="containerQuestao5">
+        <div class="container1-mid" id="containerQuestao5" style="display: none;">
             <h1> Questão 5</h1>
             <p>Quantas equipes participam da fase de grupos</p>
             <select id="selectQuintaQuestao">
@@ -85,9 +91,20 @@
             <button onclick="confirmarResposta5()"> confirmar</button>
         </div>
     </div>
+
+    <!-- bloco do perdedor-->
     <div class="container-finalizarJogo" id="containerFimjogo">
         <div id="finalizarJogo">
             <p id="fim"></p>
+        </div>
+    </div>
+
+    <!-- bloco do vencedor-->
+    <div class="container-ganhador" style="display: none;">
+        <div id="div_vencedor">
+            <img src="./imagensQuiz/tenor.gif" alt="">
+            <p>Você é um campeão</p>
+            <button onclick="vencedor()">Ir para o inico</button>
         </div>
     </div>
 
@@ -99,7 +116,7 @@
         <div class="footer-right">
             <h2>Contact</h2>
             <div class="footer-icons">
-                <a href=""><img src="./imagens/github.png" alt="github"></a>
+                <a href="https://github.com/WesleyOliveira-L"><img src="./imagens/github.png" alt="github"></a>
                 <a href=""><img src="./imagens/linkedin.png" alt=""></a>
                 <a href=""><img src="./imagens/twitter.png" alt=""></a>
             </div>
@@ -122,6 +139,7 @@
 </html>
 
 <script>
+    var acertos = 0;
     function confirmarResposta() {
 
         var questao1 = selectPrimeiraQuestao.value;
@@ -131,6 +149,7 @@
             containerQuestao1.innerHTML = "correto";
             containerQuestao1.style.color = "green";
             containerQuestao1.style.fontSize = '36px';
+            containerQuestao2.style.display = 'block';
         }
 
         else {
@@ -149,6 +168,7 @@
             containerQuestao2.innerHTML = "correto";
             containerQuestao2.style.color = "green";
             containerQuestao2.style.fontSize = '36px';
+            containerQuestao3.style.display = 'block';
         }
 
         else {
@@ -167,6 +187,7 @@
             containerQuestao3.innerHTML = "correto";
             containerQuestao3.style.color = "green";
             containerQuestao3.style.fontSize = '36px';
+            containerQuestao4.style.display = 'block';
         }
 
         else {
@@ -185,6 +206,7 @@
             containerQuestao4.innerHTML = "correto";
             containerQuestao4.style.color = "green";
             containerQuestao4.style.fontSize = '36px';
+            containerQuestao5.style.display = 'block';
         }
 
         else {
@@ -203,6 +225,7 @@
             containerQuestao5.innerHTML = "correto";
             containerQuestao5.style.color = "green";
             containerQuestao5.style.fontSize = '36px';
+            div_vencedor.style.display = 'block';
         }
 
         else {
@@ -211,6 +234,10 @@
             fim.innerHTML = 'IXX tente novamente em ';
 
         }
+    }
+
+    function vencedor() {
+        window.location = 'home.html';
     }
 
 </script>

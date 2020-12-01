@@ -52,7 +52,14 @@ body {
     padding-left: 10px;
     padding-top: 8px;
     width: 100px;
+}
 
+.container-inicio{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-finalizarJogo{
@@ -86,7 +93,7 @@ body {
         left: 0%
     }
     to {
-        left: 45%
+        left: 39%
     }
 }
     
@@ -115,7 +122,7 @@ body {
     flex-direction: column;
     border: 1px solid white;
     background-color: black;
-    height: 500px;
+    height: 400px;
     width: 50%;
     color: white;
 }
@@ -156,6 +163,61 @@ body {
 
 .container1-mid option{
     font-size: 20px;
+}
+
+.container-ganhador{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+#vencedor{
+    background-color: black;
+    border: 3px solid white;
+    border-radius: 400px;font-size: 50px;
+    font-weight: 900;
+    width: 50%;
+    height: 400px;
+    position: relative;
+    animation: movPerdeu 4s infinite alternate;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#vencedor p{
+    color: white;
+    -webkit-text-stroke: 3px green;
+}
+
+#vencedor img{
+    border: 1px solid;
+    border-radius: 10px;
+    width: 250px;
+    padding-top: 15px;
+}
+
+#vencedor button{
+    background-color: black;
+    width: 100px;
+    height: 60px;
+    margin: 10px;
+    color: white;
+    border-radius: 10px;
+    border: 3px solid white;
+}
+
+@keyframes movPerdeu {
+    from {
+        color: black;
+        left: 0%
+    }
+    to {
+        left: 49%
+    }
 }
 
 .footer{
