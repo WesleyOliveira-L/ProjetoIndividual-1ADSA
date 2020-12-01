@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/campeoes.css">
-    <title>Document</title>
+    <title>campeões</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 
     <div class="slideshow-container">
 
-        <!-- Full-width images with number and caption text -->
+        <!-- slideShow blocos -->
         <div class="mySlides fade">
 
             <div class="text">
@@ -77,17 +77,19 @@
             </div>
         </div>
         
-        <!-- Next and previous buttons -->
+        <!-- botões -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <br>
 
-    <!-- The dots/circles -->
+    <!-- marcadores -->
     <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
     </div>
 
     <div class="footer">
@@ -122,12 +124,12 @@
     var slideIndex = 1;
     showSlides(slideIndex);
 
-    // Next/previous controls
+    // controle de anterior e
     function plusSlides(n) {
         showSlides(slideIndex += n);
     }
 
-    // Thumbnail image controls
+    // funcao de controle
     function currentSlide(n) {
         showSlides(slideIndex = n);
     }

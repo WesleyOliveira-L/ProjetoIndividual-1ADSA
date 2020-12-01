@@ -19,31 +19,37 @@
             </ul>
         </div>
     </div>
+    
+    <!-- Bloco com os videos-->
     <div class="corpo">
         <div class="container-2">
             <video class="videoChampions" id="myVideo" src="./imagens/champions.mp4"
                 controls="controls" autoplay="autoplay" loop muted></video>
         </div>
     </div>
+    
+    <!-- Bloco que contém os blocos sobre historia e a classificação -->
     <div class="menu">
         <div class="container-3">
             <button onclick="historia()">HISTORIA</button>
         </div>
-
+    
         <div class="container-4">
             <button onclick="confrontos()">CLASSIFICAÇÂO</button>
         </div>
     </div>
 
+    <!-- Bloco que contém os blocos sobre os clubes campeões e idolos-->
     <div class="menu2">
         <div class="container-5">
-            <button onclick="campeoes()">CAMPEÕES</button>
+            <button onclick="campeoes()">CAMPEÔES</button>
         </div>
 
         <div class="container-6">
             <button onclick="idolos()">IDOLOS</button>
         </div>
     </div>
+
     <div class="footer">
         <div class="footer-left">
             <img src="./imagens/logochampions.png" alt="">
@@ -52,7 +58,7 @@
         <div class="footer-right">
             <h2>Contact</h2>
             <div class="footer-icons">
-                <a href=""><img src="./imagens/github.png" alt="github"></a>
+                <a href="https://github.com/WesleyOliveira-L/"><img src="./imagens/github.png" alt="github"></a>
                 <a href=""><img src="./imagens/linkedin.png" alt=""></a>
                 <a href=""><img src="./imagens/twitter.png" alt=""></a>
             </div>
@@ -73,13 +79,13 @@
 </html>
 
 <script>
-    var vid = document.getElementById("myVideo");
+    /*var vid = document.getElementById("myVideo");
 
     function documentReady() {
         vid.play();
     }
 
-    $(document).ready(documentReady);
+    $(document).ready(documentReady);*/
 
     function historia(){
         window.location = 'historia.html';
