@@ -30,9 +30,15 @@
 
 
         <!-- bloco que informa cada questao -->
+        <div class="tempo" id="cronometro" style="display: none;">
+            <h1 id="h_horas"></h1>
+            <h1 id="h_minutos"></h1>
+            <h1 id="h_segundos"></h1>
+        </div>
+    
         <div class="container1-mid" id="containerQuestao1">
             <h1> Questão 1 </h1>
-            <p> Qual é o Jogador com mais gols na historia da champions league?</p>
+            <p> Qual é o Jogador com mais gols na história da champions league?</p>
             <select id="selectPrimeiraQuestao">
                 <option value="slelecionar">selecione</option>
                 <option value="messi">Messi</option>
@@ -45,7 +51,7 @@
 
         <div class="container1-mid" id="containerQuestao2" style="display: none;">
             <h1> Questão 2 </h1>
-            <p> Qual edição teve o maior numero de visualições em sua final?</p>
+            <p> Qual edição teve o maior número de visualições em sua final?</p>
             <select id="selectSegundaQuestao">
                 <option value="">selecione</option>
                 <option value="opt_champions_2013"> 2012-2013</option>
@@ -58,7 +64,7 @@
 
         <div class="container1-mid" id="containerQuestao3" style="display: none;">
             <h1>Questão 3</h1>
-            <p>Qual clube vencedor da ultima edição?</p>
+            <p>Qual clube vencedor da última edição?</p>
             <select id="selectTerceiraQuestao">
                 <option value="">selecione</option>
                 <option value="opt_real">Real Madrid</option>
@@ -70,7 +76,7 @@
 
         <div class="container1-mid" id="containerQuestao4" style="display: none;">
             <h1> Questão 4</h1>
-            <p>Qual o clube com mais titulos da competição?</p>
+            <p>Qual o clube com mais títulos da competição?</p>
             <select id="selectQuartaQuestao">
                 <option value="">selecione</option>
                 <option value="opt_milan">Milan</option>
@@ -81,7 +87,7 @@
         </div>
         <div class="container1-mid" id="containerQuestao5" style="display: none;">
             <h1> Questão 5</h1>
-            <p>Quantas equipes participam da fase de grupos</p>
+            <p>Quantas equipes participam da fase de grupos?</p>
             <select id="selectQuintaQuestao">
                 <option value="">selecione</option>
                 <option value="opt_28">28</option>
@@ -96,14 +102,15 @@
     <div class="container-finalizarJogo" id="containerFimjogo">
         <div id="finalizarJogo">
             <p id="fim"></p>
+            <button id="btnFim" onclick="reiniciarJogo()">Tentar novamente</button>
         </div>
     </div>
 
     <!-- bloco do vencedor-->
     <div id="div_vencedor" style="display: none;">
         <img src="./imagensQuiz/tenor.gif" alt="">
-        <p>Pode comemorar jogador!!!,você acertou todas as questões</p>
-        <button onclick="vencedor()">Ir para o inicio</button>
+        <p>Pode comemorar jogador, você foi incrível!!!</p>
+        <button onclick="vencedor()">Ir para o início</button>
     </div>
 
     <div class="footer">
@@ -150,7 +157,7 @@
         else {
             containerGeral.style.display = 'none'
             containerFimjogo.style.display = 'block';
-            fim.innerHTML = 'IXX tente novamente em ';
+            fim.innerHTML = 'Questão errada';
 
         }
     }
@@ -167,7 +174,7 @@
         else {
             containerGeral.style.display = 'none'
             containerFimjogo.style.display = 'flex';
-            fim.innerHTML = 'IXX tente novamente em ';
+            fim.innerHTML = 'Questão errada';
 
         }
     }
@@ -184,7 +191,7 @@
         else {
             containerGeral.style.display = 'none'
             containerFimjogo.style.display = 'flex';
-            fim.innerHTML = 'IXX tente novamente em ';
+            fim.innerHTML = 'Questão errada';
 
         }
     }
@@ -201,10 +208,13 @@
         else {
             containerGeral.style.display = 'none'
             containerFimjogo.style.display = 'flex';
-            fim.innerHTML = 'IXX tente novamente em ';
+            fim.innerHTML = 'Questão errada';
 
         }
     }
+
+    var seg = 0;
+    var min = 1;
 
     function confirmarResposta5() {
         var questao5 = selectQuintaQuestao.value;
@@ -213,12 +223,17 @@
         if (questao5 == "opt_32") {
             containerGeral.style.display = "none";
             div_vencedor.style.display = "flex";
+            h_minutos.style.display = "none";
+            h_segundos.style.display = "none";
+            min = 10000;
+            seg = 60;
+            paiHr()
         }
 
         else {
             containerGeral.style.display = 'none';
             containerFimjogo.style.display = 'flex';
-            fim.innerHTML = 'IXX tente novamente em ';
+            fim.innerHTML = 'Você errou tente novamente ';
 
         }
     }
@@ -227,9 +242,37 @@
         window.location = 'home.html';
     }
 
+    function paiHr() {
+        if (min <= 0 && seg <= 0) {
+            containerGeral.style.display = 'none';
+            containerFimjogo.style.display = "flex"
+            fim.innerHTML = "seu tempo acabou";
+        }
+
+        else if (seg >= 0 && min >= 0) {
+
+            if (seg == 00) {
+                min--
+                seg = 59
+            }
+            seg--
+            h_segundos.innerHTML = `${seg}`
+            h_minutos.innerHTML = `${min}:`
+            setTimeout(paiHr, 1000)
+        }
+    }
     function inicioJogo() {
-        divInicio.style.display = "none"
+        divInicio.style.display = "none";
+        cronometro.style.display = "flex";
         containerGeral.style.display = "flex";
+        paiHr();
+    }
+
+    function reiniciarJogo() {
+        window.location.reload();
+        containerGeral.style.display = "none";
+        containerFimjogo.style.display = "none";
+        divInicio.style.display = "flex";
     }
 
 </script>

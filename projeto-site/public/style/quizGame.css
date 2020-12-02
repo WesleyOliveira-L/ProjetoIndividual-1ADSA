@@ -80,6 +80,18 @@ body {
     background-color: black;
 }
 
+.tempo{
+    display: flex;
+    border: 1px solid white;
+    justify-content: center;
+    background-color: black;
+    margin-top: 40px;
+    width: 200px;
+    height: 70px; 
+    color: white;
+    margin: auto;
+}
+
 .container-finalizarJogo{
     margin-top: 15%;
     display: flex;
@@ -104,6 +116,20 @@ body {
     animation: movPerdeu 8s infinite alternate;
 }
 
+#btnFim{
+    margin: 10px;
+    background-color: black;
+    color: white;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+#btnFim:hover{
+    padding: 15px;
+    background-color: white;
+    color: black;
+}
+
 @keyframes movPerdeu {
     from {
         color: black;
@@ -120,8 +146,7 @@ body {
 }
 
 .mid-Container{
-    height: 750px;
-    margin: 20px;
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,9 +156,9 @@ body {
 }
 
 .container1-mid{
+    margin: 20px;
     align-items: center;
     justify-content: space-around;
-    margin-top: 10px;
     border-radius: 20px;
     display: flex;
     text-align: center;
@@ -238,6 +263,7 @@ body {
 }
 
 .footer{
+    margin-top: 60px;
     color: white;
     background-color: black;
     display: flex;
